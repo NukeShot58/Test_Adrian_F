@@ -10,48 +10,13 @@
 <body>
     <section class="banner"><h1>Hurtownia spożywcza</h1></section>
     <section class="glowny"><h2>Opinie naszych klientów</h2> 
-        <!-- <section class="opinia">
-            <img src="media/anna.jpg" alt="klient">
-            <div>
-                <p>Dobra współpraca, zawsze swieże towary i miła obsługa</p>
-                <h4>Anna</h4>
-            </div>
-        </section>
-        <section class="opinia">
-            <img src="media/ewa.jpg" alt="klient">
-            <div>
-            <p>Poleca hurtownię za profesjonalne podejście do klienta</p>
-            <h4>Ewa</h4>
-        </div>
-        </section>
-        <section class="opinia">
-            <img src="media/janek.jpg" alt="klient">
-            <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, quod!</p>
-            <h4>Janek</h4>
-        </div>
-        </section>
-        <section class="opinia">
-            <img src="media/john.jpg" alt="klient">
-            <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, corporis.</p>
-            <h4>John</h4>
-        </div>
-        </section>
-        <section class="opinia">
-            <img src="media/judy.jpg" alt="klient">
-            <div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi, esse!</p>
-            <h4>Judy</h4>
-        </div>
-        </section> -->
         <?php 
         require_once('conn.php');
         try{
         $conn = mysqli_connect($hostname,$username,$password,$dbname);
         $sql = "select k.zdjecie, k.imie, o.opinia from Klienci k join opinie o on k.id = o.Klienci_id where k.Typy_id = 2 or k.Typy_id = 3;";
         $result = $conn->query($sql);
-        while($rekord = $result->fetch_array(MYSQLI_ASSOC)){
+        while($rekord = $result->fetch_array(MYSQLI_ASSOC)){ //Przypisuje jeden rząd jako tablica asocjacyjna do $rekord
             echo '<section class="opinia">';
             echo '<img src="media/'.$rekord['zdjecie'] .'" alt="klient">';
             echo '<div>
