@@ -28,8 +28,7 @@
         } catch(mysqli_sql_exception $e){
             echo $e;
         }
-        ?>
-        <!-- Patrz skrypt 1 --> </section>
+        ?></section>
         <div class="stopka_wrapper">
     <section class="stopka"><h3>Współpracują z nami</h3><a href="http://sklep.pl/">Sklep 1</a></section>
     <section class="stopka"><h3>Nasi top klienci</h3><ol> <?php 
